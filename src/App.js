@@ -3,9 +3,11 @@ import { useSelector, useDispatch, connect } from 'react-redux'
 import { clearData, fetchData, incrementId, decrementId, inputId } from './features/dataSlice'
 import { useEffect } from 'react';
 
+
 function App(props) {
   const dispatch = useDispatch()
   const data = useSelector((state) => state.data)
+
 
   const renderImg = () => {
     if(data.apiData) {
@@ -14,6 +16,7 @@ function App(props) {
       return <p>image here</p>
     }
   }
+  
 
   useEffect(() => {
     dispatch(fetchData())
